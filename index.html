@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@Poké_bam | Pokémon GO Community</title>
+<meta name="description" content="@Poké_bam — Pokémon GO videos, community, fun and adventure.">
+<style>
+:root{--yellow:#ffd92f;--blue:#2878ff;--dark:#071226;--card:#101f3b;--white:#f7fbff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 20% 10%,#234f92 0,#0b1730 35%,#050b18 100%);color:var(--white);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:55px 55px;opacity:.08;pointer-events:none}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(5,11,24,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1)}
+.logo{font-size:1.35rem;font-weight:900}.logo span{color:var(--yellow)}
+nav a{color:white;text-decoration:none;font-weight:800;margin-left:22px}
+.hero{max-width:1250px;margin:auto;padding:110px 5% 80px;text-align:center}
+.badge{display:inline-block;background:rgba(255,217,47,.14);border:1px solid rgba(255,217,47,.5);padding:9px 15px;border-radius:999px;color:var(--yellow);font-weight:900}
+h1{font-size:clamp(3.8rem,11vw,8.5rem);line-height:.9;margin:24px 0 18px;text-shadow:0 8px 30px #0008}
+h1 span{color:var(--yellow)}
+.hero p{max-width:850px;margin:0 auto 36px;font-size:1.3rem;line-height:1.6;color:#dbe7ff}
+.buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:15px 23px;border-radius:14px;text-decoration:none;font-weight:900;transition:.2s;display:inline-block}
+.primary{background:var(--yellow);color:#151515;box-shadow:0 10px 30px #ffd92f44}
+.secondary{border:1px solid #ffffff33;color:white;background:#ffffff0d}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.cards{max-width:1250px;margin:0 auto 85px;padding:0 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:linear-gradient(145deg,#142a50,#0b1730);border:1px solid #ffffff12;border-radius:22px;padding:34px;box-shadow:0 15px 45px #0004}
+.icon{font-size:2.7rem;margin-bottom:16px}.card h2{margin-bottom:8px}.card p{color:#b8c8e5;line-height:1.55}
+.community{max-width:1050px;margin:0 auto 95px;padding:55px 5%;text-align:center}
+.community-box{padding:55px;border-radius:32px;background:linear-gradient(135deg,#1a3d79,#101d38);border:1px solid #ffffff15}
+.community h2{font-size:3rem;margin-bottom:12px}.community p{color:#d1ddf3;line-height:1.6;margin-bottom:24px}
+footer{text-align:center;padding:30px;color:#8191ae;border-top:1px solid #ffffff0e}
+@media(max-width:760px){nav{padding:15px 5%}nav div:last-child{display:none}.cards{grid-template-columns:1fr}.hero{padding-top:65px}.community-box{padding:30px 20px}}
+
+.stats{max-width:1250px;margin:0 auto 90px;padding:0 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:#ffffff08;border:1px solid #ffffff12;border-radius:22px;padding:25px;text-align:center;box-shadow:0 12px 35px #0003}
+.stat strong{display:block;font-size:2.2rem;margin-bottom:8px}.stat span{display:block;font-weight:900;font-size:1.15rem}.stat small{display:block;color:#91a5c7;margin-top:5px}
+.features{max-width:1250px;margin:0 auto 100px;padding:0 5%}.section-title{text-align:center;margin-bottom:38px}.section-title h2{font-size:clamp(2.4rem,5vw,4rem);margin:15px 0 12px}.section-title p{max-width:720px;margin:auto;color:#b8c8e5;line-height:1.6}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.feature{background:linear-gradient(145deg,#142a50,#0b1730);border:1px solid #ffffff12;border-radius:24px;padding:30px;transition:.25s}.feature:hover{transform:translateY(-7px);border-color:#ffd92f55}.feature span{font-size:2.6rem}.feature h3{margin:15px 0 8px;font-size:1.35rem}.feature p{color:#aebfdd;line-height:1.55}
+.cta{max-width:1150px;margin:0 auto 100px;padding:55px 6%;border-radius:34px;background:linear-gradient(120deg,#173b78,#12284c);border:1px solid #ffffff15;display:flex;align-items:center;justify-content:space-between;gap:30px;box-shadow:0 25px 70px #0005}.cta h2{font-size:clamp(2rem,5vw,3.5rem);margin:15px 0 8px}.cta h2 span{color:var(--yellow)}.cta p{color:#c6d5ed;line-height:1.6}
+@media(max-width:900px){.stats,.feature-grid{grid-template-columns:repeat(2,1fr)}.cta{flex-direction:column;text-align:center}}
+@media(max-width:560px){.stats,.feature-grid{grid-template-columns:1fr}.cta{margin-left:5%;margin-right:5%;padding:40px 25px}}
+
+
+.map-bg{position:fixed;inset:0;z-index:-2;opacity:.22;background:
+linear-gradient(90deg,transparent 48%,#62a87c 49%,#62a87c 50%,transparent 51%),
+linear-gradient(0deg,transparent 48%,#62a87c 49%,#62a87c 50%,transparent 51%),
+linear-gradient(35deg,transparent 48%,#3d815f 49%,#3d815f 50%,transparent 51%);
+background-size:180px 180px,180px 180px,420px 420px;animation:mapmove 25s linear infinite}
+@keyframes mapmove{to{background-position:180px 180px,-180px 180px,420px -420px}}
+.pokeball{position:fixed;width:58px;height:58px;border-radius:50%;background:linear-gradient(#e53935 0 46%,#111 46% 54%,#f5f5f5 54%);border:4px solid #111;box-shadow:0 8px 25px #0008;z-index:-1;opacity:.8;animation:float 7s ease-in-out infinite}
+.pokeball:after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid #111;left:50%;top:50%;transform:translate(-50%,-50%)}
+.pb1{left:5%;top:25%}.pb2{right:7%;top:52%;width:42px;height:42px;animation-delay:2s}.pb3{right:17%;top:12%;width:32px;height:32px;animation-delay:4s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-25px) rotate(12deg)}}
+.section-title .poke{font-size:3rem}
+.pokedex{max-width:1250px;margin:0 auto 100px;padding:0 5%}
+.dex-shell{background:linear-gradient(145deg,#d92835,#8e1622);padding:9px;border-radius:30px;box-shadow:0 25px 70px #0006;border:2px solid #ff6b70}
+.dex-inner{background:#0b1426;border-radius:23px;padding:35px}
+.dex-top{display:flex;align-items:center;gap:18px;margin-bottom:25px}
+.dex-light{width:52px;height:52px;border-radius:50%;background:#58d8ff;border:6px solid #dff8ff;box-shadow:0 0 25px #58d8ff}
+.dex-top h2{font-size:2.5rem}
+.dex-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.mon{position:relative;overflow:hidden;border-radius:22px;padding:22px;background:linear-gradient(145deg,#1a3156,#0d1a31);border:1px solid #ffffff16;transition:.25s}
+.mon:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 15px 35px #0007}
+.mon-art{height:125px;display:flex;align-items:center;justify-content:center;font-size:5.5rem;filter:drop-shadow(0 10px 8px #0006)}
+.mon h3{font-size:1.25rem;margin:8px 0}.type{display:inline-block;padding:5px 10px;border-radius:999px;background:#ffffff12;color:#d8e6ff;font-size:.8rem;font-weight:800}.num{float:right;color:#7f94b7;font-weight:900}
+.videos{max-width:1250px;margin:0 auto 100px;padding:0 5%}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.video{background:#0e1d37;border:1px solid #ffffff12;border-radius:24px;overflow:hidden;box-shadow:0 15px 45px #0005}
+.video-thumb{height:190px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#2767d9,#5e2aa5);position:relative}
+.video-thumb:after{content:"▶";position:absolute;width:65px;height:65px;border-radius:50%;display:grid;place-items:center;background:#ffd92f;color:#111;font-size:1.5rem;box-shadow:0 8px 25px #0006}
+.video-body{padding:22px}.video-body h3{margin-bottom:8px}.video-body p{color:#aebfdd;line-height:1.5}
+.goal{max-width:950px;margin:0 auto 100px;padding:0 5%;text-align:center}.goal-box{background:#0e1d37;border:1px solid #ffffff15;border-radius:28px;padding:40px;box-shadow:0 20px 55px #0005}.goal h2{font-size:2.6rem;margin-bottom:10px}.goal p{color:#b8c8e5;margin-bottom:25px}.progress{height:24px;background:#071226;border-radius:99px;overflow:hidden;border:1px solid #ffffff15}.progress span{display:block;width:5.6%;height:100%;background:linear-gradient(90deg,#ffd92f,#ff9d2f);border-radius:99px;box-shadow:0 0 20px #ffd92f88}.goal-count{margin-top:12px;font-weight:900;color:#ffd92f}
+@media(max-width:900px){.dex-grid{grid-template-columns:repeat(2,1fr)}.video-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.dex-grid{grid-template-columns:1fr}.dex-inner{padding:22px}.dex-top h2{font-size:2rem}}
+</style>
+</head>
+<body>
+<div class="map-bg"></div>
+<div class="pokeball pb1"></div><div class="pokeball pb2"></div><div class="pokeball pb3"></div>
+<nav>
+  <div class="logo">⚡ <span>@Poké_bam</span></div>
+  <div><a href="#stats">Explore</a><a href="#community">Community</a><a href="https://www.youtube.com/@Pok%C3%A9_bam" target="_blank">YouTube ↗</a></div>
+</nav>
+
+<section class="hero">
+  <div class="badge">⚡ Pokémon GO • Community • Good Times</div>
+  <h1>Catch. Battle.<br><span>Have Fun.</span></h1>
+  <p>Welcome to <strong>@Poké_bam</strong> — a Pokémon GO community built around awesome adventures, fun videos, shiny hunts, battles and growing together.</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://www.youtube.com/@Pok%C3%A9_bam" target="_blank">▶ Subscribe on YouTube</a>
+    <a class="btn secondary" href="#community">🌟 Join the Community</a>
+  </div>
+</section>
+
+<section class="cards">
+  <article class="card"><div class="icon">⚡</div><h2>Pokémon GO</h2><p>Follow the latest adventures, catches, battles and Pokémon GO moments from @Poké_bam.</p></article>
+  <article class="card"><div class="icon">🔥</div><h2>Good Times</h2><p>No pressure — just fun, laughs and memorable Pokémon GO moments with the community.</p></article>
+  <article class="card"><div class="icon">🌟</div><h2>Grow Together</h2><p>Subscribe, share your favourite moments and help build an awesome Pokémon GO community.</p></article>
+</section>
+
+
+<section class="stats" id="stats">
+  <div class="stat"><strong>⚡</strong><span>Pokémon GO</span><small>Adventure</small></div>
+  <div class="stat"><strong>🔥</strong><span>New Videos</span><small>More fun to come</small></div>
+  <div class="stat"><strong>🌟</strong><span>Community</span><small>Everyone welcome</small></div>
+  <div class="stat"><strong>🎯</strong><span>Big Goals</span><small>Growing together</small></div>
+</section>
+
+<section class="features">
+  <div class="section-title">
+    <div class="badge">🎒 WHAT'S HAPPENING</div>
+    <h2>What's inside the adventure?</h2>
+    <p>Follow @Poké_bam for Pokémon GO content made for people who love catching, battling and having a laugh.</p>
+  </div>
+  <div class="feature-grid">
+    <article class="feature"><span>✨</span><h3>Shiny Hunts</h3><p>Join the hunt for those rare and exciting shiny Pokémon.</p></article>
+    <article class="feature"><span>⚔️</span><h3>Battles & Raids</h3><p>Take on battles, raids and whatever Pokémon GO throws our way.</p></article>
+    <article class="feature"><span>📱</span><h3>Shorts & Videos</h3><p>Quick Pokémon GO moments, funny clips and full adventures.</p></article>
+    <article class="feature"><span>🏆</span><h3>Big Goals</h3><p>Help the channel grow while we build an awesome Pokémon community.</p></article>
+  </div>
+</section>
+
+<section class="cta">
+  <div>
+    <div class="badge">🎮 YOUR NEXT ADVENTURE STARTS HERE</div>
+    <h2>Become part of <span>@Poké_bam</span></h2>
+    <p>Subscribe, bring your friends and let's make this Pokémon GO community huge!</p>
+  </div>
+  <a class="btn primary" href="https://www.youtube.com/@Pok%C3%A9_bam" target="_blank">▶ SUBSCRIBE NOW</a>
+</section>
+
+
+<section class="pokedex">
+  <div class="section-title">
+    <div class="badge">📖 THE @POKÉ_BAM POKÉDEX</div>
+    <h2>Pokémon spotted on the adventure</h2>
+    <p>A few favourites to kick off the Pokédex. More Pokémon can be added as the community grows!</p>
+  </div>
+  <div class="dex-shell">
+    <div class="dex-inner">
+      <div class="dex-top"><div class="dex-light"></div><div><h2>Pokédex</h2><p style="color:#91a5c7">Community collection</p></div></div>
+      <div class="dex-grid">
+        <article class="mon"><span class="num">#025</span><div class="mon-art">⚡</div><h3>Pikachu</h3><span class="type">ELECTRIC</span></article>
+        <article class="mon"><span class="num">#006</span><div class="mon-art">🔥</div><h3>Charizard</h3><span class="type">FIRE / FLYING</span></article>
+        <article class="mon"><span class="num">#150</span><div class="mon-art">🧬</div><h3>Mewtwo</h3><span class="type">PSYCHIC</span></article>
+        <article class="mon"><span class="num">#143</span><div class="mon-art">💤</div><h3>Snorlax</h3><span class="type">NORMAL</span></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="videos">
+  <div class="section-title">
+    <div class="badge">▶ LATEST VIDEOS</div>
+    <h2>Catch the latest from @Poké_bam</h2>
+    <p>Replace these placeholders with your newest YouTube videos as your channel grows.</p>
+  </div>
+  <div class="video-grid">
+    <article class="video"><div class="video-thumb">⚡</div><div class="video-body"><h3>Pokémon GO Adventure</h3><p>New catches, surprises and plenty of good times.</p></div></article>
+    <article class="video"><div class="video-thumb">🔥</div><div class="video-body"><h3>Raid Battle Time</h3><p>Jump into the action and see what we can take down.</p></div></article>
+    <article class="video"><div class="video-thumb">✨</div><div class="video-body"><h3>Shiny Hunt!</h3><p>Will we find a shiny? Watch the adventure to find out.</p></div></article>
+  </div>
+</section>
+
+<section class="goal">
+  <div class="goal-box">
+    <div class="badge">🎯 COMMUNITY SUBSCRIBER GOAL</div>
+    <h2>Road to 1,000 Subscribers</h2><div style="font-size:3.5rem;font-weight:900;color:#ffd92f;margin:8px 0">56</div><p style="font-weight:800;color:#fff">Current Subscribers</p>
+    <p>Every subscriber helps build the @Poké_bam Pokémon GO community.</p>
+    <div class="progress"><span></span></div>
+    <div class="goal-count">56 / 1,000 • 5.6%</div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="community-box">
+    <h2>Ready to join the adventure?</h2>
+    <p>Hit subscribe, become part of the community and let's see what we can catch next!</p>
+    <a class="btn primary" href="https://www.youtube.com/@Pok%C3%A9_bam" target="_blank">🎮 Visit @Poké_bam</a>
+  </div>
+</section>
+
+<footer>© 2026 @Poké_bam • Pokémon GO community & gaming content</footer>
+</body>
+</html>
